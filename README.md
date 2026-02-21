@@ -27,9 +27,18 @@ Railway is extremely fast and handles Docker automatically.
 1. Create a [Railway](https://railway.app/) account.
 2. Click **"New Project"** -> **"Deploy from GitHub repo"**.
 3. Select your repository.
-4. Railway will detect the root and ask which service to deploy. You need to deploy **two** services from the same repo:
-   - **Backend**: Set "Source Directory" to `/backend` (or let it detect Dockerfile). Ensure Port is **8000**.
-   - **Frontend**: Set "Source Directory" to `/frontend`. Set environment variable `NEXT_PUBLIC_API_URL` to your Backend's Railway URL.
+4. **Crucial:** You need to deploy **two** separate services:
+
+   **Service 1: Backend**
+   - Go to **Settings** -> **Root Directory**, set it to `/backend`.
+   - Railway will automatically detect the `Dockerfile`.
+   - **Do NOT** enter anything in "Build Command". The Dockerfile handles it.
+   - Ensure the Port is set to **8000** in Settings.
+
+   **Service 2: Frontend**
+   - Go to **Settings** -> **Root Directory**, set it to `/frontend`.
+   - In **Variables**, add `NEXT_PUBLIC_API_URL` and set it to your Backend's Railway URL (e.g., `https://...railway.app`).
+   - Railway will detect the `Dockerfile` and build it.
 
 ### Option 2: Render (Free Tier Tip)
 If Render asks for payment, it's because of the "Disk" storage in `render.yaml`. To use the **Free Tier**, you can deploy the services manually without a Disk:
