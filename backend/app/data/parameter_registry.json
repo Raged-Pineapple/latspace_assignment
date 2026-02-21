@@ -1,0 +1,162 @@
+[
+  {
+    "name": "coal_consumption",
+    "display_name": "Coal Consumption",
+    "unit": "MT",
+    "category": "input",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "steam_generation",
+    "display_name": "Steam Generation",
+    "unit": "TPH",
+    "category": "output",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "boiler_efficiency",
+    "display_name": "Boiler Efficiency",
+    "unit": "%",
+    "category": "calculated",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "feed_water_temperature",
+    "display_name": "Feed Water Temperature",
+    "unit": "°C",
+    "category": "input",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "steam_pressure",
+    "display_name": "Steam Pressure",
+    "unit": "kg/cm²",
+    "category": "input",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "steam_temperature",
+    "display_name": "Steam Temperature",
+    "unit": "°C",
+    "category": "input",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "flue_gas_temperature",
+    "display_name": "Flue Gas Temperature",
+    "unit": "°C",
+    "category": "output",
+    "section": "COGEN BOILER",
+    "applicable_asset_types": ["boiler"]
+  },
+  {
+    "name": "power_generation",
+    "display_name": "Power Generation",
+    "unit": "MW",
+    "category": "output",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "turbine_inlet_pressure",
+    "display_name": "Turbine Inlet Pressure",
+    "unit": "kg/cm²",
+    "category": "input",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "turbine_inlet_temperature",
+    "display_name": "Turbine Inlet Temperature",
+    "unit": "°C",
+    "category": "input",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "turbine_exhaust_pressure",
+    "display_name": "Turbine Exhaust Pressure",
+    "unit": "kg/cm²",
+    "category": "output",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "turbine_efficiency",
+    "display_name": "Turbine Efficiency",
+    "unit": "%",
+    "category": "calculated",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "heat_rate",
+    "display_name": "Heat Rate",
+    "unit": "kcal/kWh",
+    "category": "calculated",
+    "section": "TURBINE",
+    "applicable_asset_types": ["turbine"]
+  },
+  {
+    "name": "cooling_water_flow",
+    "display_name": "Cooling Water Flow",
+    "unit": "m³/hr",
+    "category": "input",
+    "section": "COOLING TOWER",
+    "applicable_asset_types": ["cooling_tower"]
+  },
+  {
+    "name": "cooling_water_inlet_temp",
+    "display_name": "Cooling Water Inlet Temperature",
+    "unit": "°C",
+    "category": "input",
+    "section": "COOLING TOWER",
+    "applicable_asset_types": ["cooling_tower"]
+  },
+  {
+    "name": "cooling_water_outlet_temp",
+    "display_name": "Cooling Water Outlet Temperature",
+    "unit": "°C",
+    "category": "output",
+    "section": "COOLING TOWER",
+    "applicable_asset_types": ["cooling_tower"]
+  },
+  {
+    "name": "approach_temperature",
+    "display_name": "Approach Temperature",
+    "unit": "°C",
+    "category": "calculated",
+    "section": "COOLING TOWER",
+    "applicable_asset_types": ["cooling_tower"]
+  },
+  {
+    "name": "total_power_output",
+    "display_name": "Total Power Output",
+    "unit": "MW",
+    "category": "calculated",
+    "section": "PLANT SUMMARY",
+    "applicable_asset_types": ["boiler", "turbine", "cooling_tower"]
+  },
+  {
+    "name": "auxiliary_power_consumption",
+    "display_name": "Auxiliary Power Consumption",
+    "unit": "MW",
+    "category": "input",
+    "section": "PLANT SUMMARY",
+    "applicable_asset_types": ["boiler", "turbine", "cooling_tower"]
+  },
+  {
+    "name": "net_power_output",
+    "display_name": "Net Power Output",
+    "unit": "MW",
+    "category": "calculated",
+    "section": "PLANT SUMMARY",
+    "applicable_asset_types": ["boiler", "turbine", "cooling_tower"]
+  }
+]
