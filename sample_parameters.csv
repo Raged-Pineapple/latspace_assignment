@@ -1,0 +1,9 @@
+name,display_name,unit,category,section
+furnace_temperature,Furnace Temperature,°C,input,FURNACE
+slag_output,Slag Output,TPD,output,FURNACE
+fuel_oil_consumption,Fuel Oil Consumption,KL/day,input,FUEL SYSTEM
+specific_energy,Specific Energy Consumption,kWh/MT,calculated,ENERGY
+water_consumption,Water Consumption,m³/hr,input,UTILITIES
+compressed_air_flow,Compressed Air Flow,Nm³/min,input,UTILITIES
+stack_emission,Stack Emission,mg/Nm³,output,ENVIRONMENT
+ambient_temperature,Ambient Temperature,°C,input,ENVIRONMENT
