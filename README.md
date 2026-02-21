@@ -1,6 +1,7 @@
 # Plant Onboarding Wizard
 
 A full-stack guided onboarding wizard for industrial plant configuration.
+[Project Demo Video (Google Drive)](https://drive.google.com/file/d/1UruMGjlhJifNO8a5Z7avBgCk4LsyBotl/view?usp=sharing)
 
 ## Track Selection
 **Track B: The Full-Stack Wizard**
