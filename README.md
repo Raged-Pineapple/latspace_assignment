@@ -22,12 +22,14 @@ I chose this track because I have a unique skill in designing and building end-t
 
 ## Quick Start
 
-### Option 1: Docker (Recommended)
-```bash
-docker-compose up --build
-```
+### Option 1: Render (One-Click Deploy)
+This project includes a `render.yaml` blueprint. To deploy:
+1. Push this repo to your GitHub.
+2. Go to **Render Dashboard** -> **Blueprints** -> **New Blueprint Instance**.
+3. Select this repository.
+4. Render will automatically set up the Backend (FastAPI) and Frontend (Next.js) with connected URLs.
 
-### Option 2: Local Development
+### Option 2: Docker (Local)
 ```bash
 # Backend
 cd backend
