@@ -2,6 +2,11 @@
 
 A full-stack guided onboarding wizard for industrial plant configuration.
 
+## Track Selection
+**Track B: The Full-Stack Wizard**
+
+I chose this track because I have a unique skill in designing and building end-to-end pipelines, and I find the problem of streamlining industrial onboarding to be a genuine gap many companies face nowadays. Building a robust bridge between complex field descriptions and structured asset configuration is critical for modern industrial data platforms.
+
 ## Architecture
 
 | Layer | Technology | Purpose |
@@ -9,6 +14,11 @@ A full-stack guided onboarding wizard for industrial plant configuration.
 | Frontend | Next.js + TypeScript | Multi-step wizard UI |
 | Backend | FastAPI + Python | Parameter registry, validation, AI suggestions |
 | Data | JSON files | Version-controlled parameter catalog |
+
+### Key Decisions & Tradeoffs
+- **Keyword-based Suggestion Engine**: Chose a deterministic rule-engine over a LLM to ensure zero-latency, zero-cost, and 100% safety for industrial parameters, while still providing "intelligent" suggestions based on plant descriptions.
+- **Stateless Backend**: The backend is designed for high concurrency by keeping wizard state in the client's `localStorage` and persisting configurations as JSON templates.
+- **Safety-First Formula Validation**: Instead of `eval()`, we use Python's `compile()` mode combined with a strict token blocklist to validate logic without execution risk.
 
 ## Quick Start
 
@@ -24,7 +34,7 @@ cd backend
 python -m venv venv
 venv\Scripts\pip.exe install -r requirements.txt
 python seed_data.py
-venv\Scripts\python.exe -m uvicorn app.main:app --port 8000 --reload
+venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 # Frontend (new terminal)
 cd frontend
@@ -36,18 +46,17 @@ Open **http://localhost:3000**
 
 ## Features
 
-### Core
-- 5-step guided wizard (Plant Info > Assets > Parameters > Formulas > Review)
-- Real-time formula validation with debounced backend calls
-- Parameter filtering by asset type from a versioned registry
-- JSON preview & download, full submission API
+- **Guided 5-Step Process**: Interactive flow from plant setup to final review.
+- **Real-time Validation**: Instant formula checking with dependency resolution.
+- **AI-Assisted Suggestions**: Context-aware parameter recommendations.
+- **Bulk Import/Export**: Support for CSV parameter ingestion and JSON template management.
+- **Aesthetic UI**: Dark/Light mode toggle with responsive glassmorphism design.
 
-### Stretch Goals
-- AI-assisted parameter suggestion (keyword engine)
-- CSV import for bulk parameter upload
-- Template system (save/load/delete configs)
-- Light/dark theme toggle
-- localStorage persistence (resume wizard on reload)
+## Future Improvements
+- **True LLM Integration**: Upgrade the suggestion engine to use a specialized RAG (Retrieval-Augmented Generation) pipeline for even more nuanced parameter mapping.
+- **RBAC (Role Based Access Control)**: Add authentication layers for different user roles (Ops Manager vs. Data Engineer).
+- **Advanced Formula Functions**: Support for more complex industrial calculations with time-series historical data integration.
+- **Relational Database**: Transition from file-based templates to a relational DB (PostgreSQL) for enterprise-scale scaling.
 
 ## Testing
 ```bash
@@ -57,8 +66,4 @@ python -m pytest tests/ -v
 ```
 
 ## Documentation
-See [DOCUMENTATION.md](./DOCUMENTATION.md) for:
-- AI prompt engineering reasoning
-- Formula validation safety design
-- Performance considerations
-- Error handling strategy
+See [DOCUMENTATION.md](./DOCUMENTATION.md) for deeper technical details.
