@@ -22,14 +22,21 @@ I chose this track because I have a unique skill in designing and building end-t
 
 ## Quick Start
 
-### Option 1: Render (One-Click Deploy)
-This project includes a `render.yaml` blueprint. To deploy:
-1. Push this repo to your GitHub.
-2. Go to **Render Dashboard** -> **Blueprints** -> **New Blueprint Instance**.
-3. Select this repository.
-4. Render will automatically set up the Backend (FastAPI) and Frontend (Next.js) with connected URLs.
+### Option 1: Railway (Fastest Deployment)
+Railway is extremely fast and handles Docker automatically.
+1. Create a [Railway](https://railway.app/) account.
+2. Click **"New Project"** -> **"Deploy from GitHub repo"**.
+3. Select your repository.
+4. Railway will detect the root and ask which service to deploy. You need to deploy **two** services from the same repo:
+   - **Backend**: Set "Source Directory" to `/backend` (or let it detect Dockerfile). Ensure Port is **8000**.
+   - **Frontend**: Set "Source Directory" to `/frontend`. Set environment variable `NEXT_PUBLIC_API_URL` to your Backend's Railway URL.
 
-### Option 2: Docker (Local)
+### Option 2: Render (Free Tier Tip)
+If Render asks for payment, it's because of the "Disk" storage in `render.yaml`. To use the **Free Tier**, you can deploy the services manually without a Disk:
+1. **Backend**: New Web Service -> Select Repo -> Root Dir: `backend` -> Start Command: `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
+2. **Frontend**: New Web Service -> Select Repo -> Root Dir: `frontend` -> Add Env Var `NEXT_PUBLIC_API_URL`.
+
+### Option 3: Docker (Local)
 ```bash
 # Backend
 cd backend
